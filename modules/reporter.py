@@ -1,7 +1,7 @@
 import json
 
 
-def save_report(data):
+def save_json_report(data):
 
     with open(
         "reports/report.json",

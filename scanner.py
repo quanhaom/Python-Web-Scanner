@@ -4,6 +4,9 @@ from modules.headers import (
     check_headers,
     calculate_score
 )
+from modules.reporter import (
+    save_json_report
+)
 
 print("=" * 50)
 print("PYTHON WEB SCANNER")
@@ -83,5 +86,30 @@ else:
                 f"  - {input_field['name']} "
                 f"({input_field['type']})"
             )
+report = {
 
+    "target": target,
+
+    "total_links": len(
+        links
+    ),
+
+    "links": links,
+
+    "security_score": score,
+
+    "headers": headers,
+
+    "forms": forms
+}
+save_json_report(
+    report
+)
+print(
+    "\nReport saved:"
+)
+
+print(
+    "reports/report.json"
+)
 print("\nScan completed.")
