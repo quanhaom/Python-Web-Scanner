@@ -5,9 +5,9 @@ from modules.headers import (
     calculate_score
 )
 from modules.reporter import (
-    save_json_report
+    save_json_report,
+    save_html_report
 )
-
 print("=" * 50)
 print("PYTHON WEB SCANNER")
 print("=" * 50)
@@ -105,11 +105,18 @@ report = {
 save_json_report(
     report
 )
+save_html_report(
+    report
+)
 print(
-    "\nReport saved:"
+    "\nReports saved:"
 )
 
 print(
     "reports/report.json"
+)
+
+print(
+    "reports/report.html"
 )
 print("\nScan completed.")
