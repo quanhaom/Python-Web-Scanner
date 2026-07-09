@@ -1,4 +1,4 @@
-from modules.crawler import get_links
+from modules.crawler import crawl_site
 from modules.forms import find_forms
 from modules.headers import (
     check_headers,
@@ -16,7 +16,10 @@ target = input("\nTarget URL: ").strip()
 
 print("\n[+] Crawling website...")
 
-links = get_links(target)
+links = crawl_site(
+    target,
+    max_pages=20
+)
 
 print("\n" + "=" * 50)
 print("DISCOVERED LINKS")
